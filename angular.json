@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "superpage": {
+    "superpag": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/superpage",
+            "outputPath": "dist/superpag",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,9 +27,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "./node_modules/tw-elements/dist/js/tw-elements.umd.min.js"
-            ],
+            "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -64,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "superpage:build:production"
+              "buildTarget": "superpag:build:production"
             },
             "development": {
-              "buildTarget": "superpage:build:development"
+              "buildTarget": "superpag:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "superpage:build"
+            "buildTarget": "superpag:build"
           }
         },
         "test": {
