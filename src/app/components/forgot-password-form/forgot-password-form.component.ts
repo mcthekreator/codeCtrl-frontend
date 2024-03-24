@@ -1,19 +1,19 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Router, RouterLink} from "@angular/router";
+import {SpinnerComponent} from "../spinner/spinner.component";
 
 
 @Component({
   selector: 'app-forgot-password-form',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SpinnerComponent],
   templateUrl: './forgot-password-form.component.html',
   styleUrl: './forgot-password-form.component.css',
 })
 export class ForgotPasswordFormComponent {
-  constructor(private router:Router) {
+  @Input() isLoading = false
+  constructor(private router: Router) {}
+  verify() {
+    this.router.navigate(['/verify']);
   }
-  verify(){
-    this.router.navigate(["/verify"])
-  }
-
 }
