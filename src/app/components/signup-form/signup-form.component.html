@@ -1,16 +1,31 @@
-<section class="w-10/12 mx-auto">
-  <form action="">
-    <label class="text-sm font-normal text-gray-500">Username</label>
-    <input class="text-sm py-2 px-5 my- mb-4 border w-full mx-auto flex items-center rounded-md placeholder:text-xs placeholder:font-light active:border-red-600" type="text" placeholder="username" required>
-    <label class="text-sm font-normal text-gray-500">Email Address</label>
-    <input class="text-sm py-2 px-5 my- mb-4 border w-full mx-auto flex items-center rounded-md placeholder:text-xs placeholder:font-light active:border-red-600" type="email" placeholder="example@mail.com" required>
-    <label class="text-sm font-normal text-gray-500">Password</label>
-    <input class="py-2 px-5 my-1 border w-full mx-auto flex items-center rounded-md  placeholder:text-xs placeholder:font-light" type="password" placeholder="Password" required>
-    <div class="text-xs my-3 text-gray-500 flex items-start">
-      <input type="checkbox" >
-      <h6 class="mx-2"> I accept superpage's <span class="text-tertiary">Terms of Service </span>and <span class="text-tertiary">Privacy Policy</span>. Also i agreed superpage <span class="text-tertiary">Refund policy</span></h6>
-    </div>
-    <button class="w-full py-2 px-5 bg-secondary text-gray-50 text-sm rounded my-8 hover:bg-tertiary ease-out duration-500 transition-delay-100">Register Now</button>
+@if(isLoading){
+  <app-spinner></app-spinner>
+}
+<section class="w-10/12 mx-auto ">
 
+  <form action="" [formGroup]="signUpForm" (submit)="submitForm()">
+    <label class="text-sm font-normal text-gray-500">Username</label>
+    <input
+      class="text-sm py-2 px-5 my- mb-4 border w-full mx-auto flex items-center rounded-md placeholder:text-xs placeholder:font-light active:border-red-600"
+      type="text" placeholder="username" formControlName="username" required>
+    <label class="text-sm font-normal text-gray-500">Email Address</label>
+    <input
+      class="text-sm py-2 px-5 my- mb-4 border w-full mx-auto flex items-center rounded-md placeholder:text-xs placeholder:font-light active:border-red-600"
+      type="email" placeholder="example@mail.com" formControlName="email"  required>
+    <label class="text-sm font-normal text-gray-500">Password</label>
+    <input
+      class="py-2 px-5 my-1 border w-full mx-auto flex items-center rounded-md  placeholder:text-xs placeholder:font-light"
+      type="password" placeholder="Password" formControlName="password" required>
+    <div class="text-xs my-3 text-gray-500 flex items-start"  >
+      <input type="checkbox" required formControlName="agreement">
+      <h6 class="mx-2"> I accept superpage's <span class="text-tertiary">Terms of Service </span>and <span
+        class="text-tertiary">Privacy Policy</span>. Also i agreed superpage <span
+        class="text-tertiary">Refund policy</span></h6>
+    </div>
+    <button
+      class="w-full py-2 px-5 bg-secondary text-gray-50 text-sm rounded my-8 hover:bg-tertiary ease-out duration-500 transition-delay-100">
+      Register Now
+    </button>
   </form>
 </section>
+
