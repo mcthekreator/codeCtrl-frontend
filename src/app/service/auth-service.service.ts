@@ -12,9 +12,9 @@ export class AuthServiceService {
   constructor(private http:HttpClient) { }
 
   registerUser(userData: UserInterface): Observable<any> {
-    const apiUrl = 'http://localhost:8080/api/register'; // Replace with your API endpoint
+    const apiUrl = 'http://localhost:8080/api/register';
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    // console.log(userData)
+
     console.log(headers)
     return this.http.post(apiUrl, userData, { headers });
   }
